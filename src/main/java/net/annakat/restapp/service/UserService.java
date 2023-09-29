@@ -14,4 +14,8 @@ public class UserService {
     public User createUser(User user) {
         return userRepository.create(user);
     }
+
+    public void deleteUser(Integer id) {
+        userRepository.delete(id);
+    }
 }
