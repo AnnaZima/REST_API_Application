@@ -1,6 +1,6 @@
 package net.annakat.restapp.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,6 +20,6 @@ public class User {
     private Integer id;
     @Column(name = "name")
     private String name;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Event> events;
 }

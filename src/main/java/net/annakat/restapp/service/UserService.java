@@ -4,6 +4,8 @@ import net.annakat.restapp.model.User;
 import net.annakat.restapp.repository.UserRepository;
 import net.annakat.restapp.repository.impl.UserRepositoryImpl;
 
+import java.util.List;
+
 public class UserService {
     UserRepository userRepository = new UserRepositoryImpl();
 
@@ -15,7 +17,16 @@ public class UserService {
         return userRepository.create(user);
     }
 
+    public User updateUser(User user) {
+        return  userRepository.update(user);
+    }
+
     public void deleteUser(Integer id) {
         userRepository.delete(id);
     }
+
+    public List<User> getAll () {
+        return userRepository.getAll();
+    }
+
 }

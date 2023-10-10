@@ -27,15 +27,15 @@ public class UserRepositoryImpl implements UserRepository {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.get(User.class, id);
         }
-
     }
+
 
     @Override
     public User update(User object) {
         User merge;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            merge = session.merge(object);
+            merge = (User) session.merge(object);
             transaction.commit();
         }
         return merge;
@@ -43,18 +43,20 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void delete(Integer id) {
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+        User user = new User();
+        user.setId(id);
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            session.remove(id);
+            session.remove(user);
             transaction.commit();
         }
-
     }
+
 
     @Override
     public List<User> getAll() {
         List<User> users;
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Query<User> from_user = session.createQuery("From User", User.class);
             users = from_user.list();
         }

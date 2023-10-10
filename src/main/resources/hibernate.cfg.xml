@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<!--<?xml version='1.0' encoding='utf-8'?>-->
 
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
@@ -9,7 +9,7 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/crudDB</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/mydb</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">241663</property>
     </session-factory>
