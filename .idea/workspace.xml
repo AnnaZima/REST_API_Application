@@ -5,30 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a1eca71-ec10-4b1d-815f-43fced5735ba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/controller/EventControllerV1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/controller/FileControllerV1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/controller/UserControllerV1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/util/LocalDateTimeAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1_1__createTable.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/controller/EventServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/controller/FileServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/controller/UserServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/model/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/model/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/model/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/model/UFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/FileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/FileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/impl/EventRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/impl/EventRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/impl/FileRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/impl/FileRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/impl/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/service/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/service/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/util/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,15 +179,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/net/annakat/restapp/controller/FileControllerV1.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.google.gson.Gson" memberName="reflectionFilters" />
