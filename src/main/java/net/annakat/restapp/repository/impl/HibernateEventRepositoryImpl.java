@@ -9,11 +9,11 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class EventRepositoryImpl implements EventRepository {
+public class HibernateEventRepositoryImpl implements EventRepository {
     @Override
     public Event create(Event object) {
         Event event;
-        try(Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try(Session session = HibernateUtil.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.persist(object);
              event = session.get(Event.class, object.getName());
@@ -25,7 +25,7 @@ public class EventRepositoryImpl implements EventRepository {
     @Override
     public Event get(Integer id) {
         Event event;
-        try(Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try(Session session = HibernateUtil.openSession()) {
             event = session.get(Event.class, id);
         }
         return event;
@@ -40,7 +40,7 @@ public class EventRepositoryImpl implements EventRepository {
     public void delete(Integer id) {
         Event event = new Event();
         event.setId(id);
-        try(Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try(Session session = HibernateUtil.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.remove(event);
             transaction.commit();
@@ -50,7 +50,7 @@ public class EventRepositoryImpl implements EventRepository {
     @Override
     public List<Event> getAll() {
         List<Event> eventList;
-        try(Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try(Session session = HibernateUtil.openSession()) {
             Query<Event> events = session.createQuery("From Event", Event.class);
             eventList = events.list();
         }

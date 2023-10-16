@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@WebServlet(urlPatterns = "/api/v1/users/*")
+@WebServlet("/api/v1/users/*")
 public class UserControllerV1 extends HttpServlet {
     private final UserService userService = new UserService();
     private final Gson GSON = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter()).create();

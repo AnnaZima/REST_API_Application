@@ -23,28 +23,6 @@ import java.util.stream.Collectors;
 @WebServlet("/api/v1/files/*")
 public class FileControllerV1 extends HttpServlet {
     private final FileService fileService = new FileService();
-    private final EventService eventService = new EventService();
-
-    private File createFile() {
-        File file = new File("src/main/resources/files");
-        if (!file.exists()) {
-            file.mkdirs();
-        }
-        String name = UUID.randomUUID().toString();
-        return new File(file, name);
-    }
-
-    private Event makeEvent(HttpServletRequest request, String nameEvent, UFile savedFile) {
-        User user = new User();
-        user.setId(Integer.parseInt(request.getHeader("user-id")));
-        Event event = new Event();
-        event.setName(nameEvent);
-        event.setCreated(LocalDateTime.now());
-        event.setUFile(savedFile);
-        event.setUser(user);
-        return eventService.createEvent(event);
-    }
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -68,7 +46,12 @@ public class FileControllerV1 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         log("пришел запрос на загрузку файла ");
-        File file = createFile();
+        File filePath = new File("src/main/resources/files");
+        if (!filePath.exists()) {
+            filePath.mkdirs();
+        }
+        String name = UUID.randomUUID().toString();
+        File file = new File(filePath, name);
         try (ServletInputStream inputStream = req.getInputStream();
              FileWriter fileWriter = new FileWriter(file)) {
             int b;
@@ -78,14 +61,9 @@ public class FileControllerV1 extends HttpServlet {
         } catch (IOException exception) {
             exception.printStackTrace();
         }
-
-        UFile uFile = new UFile();
-        uFile.setName(file.getName());
-        uFile.setFilePath(file.getPath());
-        UFile savedFile = fileService.addFile(uFile);
-        Event event = makeEvent(req, "Upload", savedFile);
+        UFile savedFile = fileService.addFile(file, req);
         PrintWriter writer = resp.getWriter();
-        writer.println("Файл " + file.getName() + " загружен" + " ID: " + savedFile.getId() + " событие: " + event);
+        writer.println("Файл " + file.getName() + " загружен" + " ID: " + savedFile.getId());
 
 
     }
@@ -110,8 +88,7 @@ public class FileControllerV1 extends HttpServlet {
         } else {
             writer.println("Укажите File ID для изменения ");
         }
-        UFile updatedFile = fileService.updateFile(uFile);
-        makeEvent(request, "Update", updatedFile);
+        UFile updatedFile = fileService.updateFile(uFile, request);
         writer.println(updatedFile);
 
     }
@@ -129,8 +106,7 @@ public class FileControllerV1 extends HttpServlet {
         File file = new File(filePath);
         boolean isDelete = file.delete();
         if (isDelete) {
-            fileService.deleteFile(id);
-            makeEvent(request, "Delete", uFile);
+            fileService.deleteFile(uFile, request);
             writer.println("Файл успешно удален");
         } else {
             writer.println("Не удалось удалить файл, проверьте правильность вводимых данных");

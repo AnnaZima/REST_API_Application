@@ -2,12 +2,21 @@ package net.annakat.restapp.service;
 
 import net.annakat.restapp.model.User;
 import net.annakat.restapp.repository.UserRepository;
-import net.annakat.restapp.repository.impl.UserRepositoryImpl;
+import net.annakat.restapp.repository.impl.HibernateUserRepositoryImpl;
 
 import java.util.List;
 
 public class UserService {
-    UserRepository userRepository = new UserRepositoryImpl();
+
+    UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public UserService() {
+        userRepository = new HibernateUserRepositoryImpl();
+    }
 
     public User getUser(Integer id) {
         return userRepository.get(id);

@@ -7,13 +7,16 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import javax.persistence.TypedQuery;
 import java.util.List;
+import java.util.Optional;
 
-public class UserRepositoryImpl implements UserRepository {
+public class HibernateUserRepositoryImpl implements UserRepository {
+
     @Override
     public User create(User object) {
         User savedUser;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try (Session session = HibernateUtil.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.persist(object);
             savedUser = session.get(User.class, object.getId());
@@ -24,16 +27,21 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User get(Integer id) {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.get(User.class, id);
+        Optional<User> user;
+        try (Session session = HibernateUtil.openSession()) {
+           Query<User> query = session.createQuery("FROM User u LEFT JOIN FETCH " +
+                    "u.events e WHERE u.id = :userId", User.class);
+          query.setParameter("userId", id);
+            user = query.uniqueResultOptional();
         }
+        return user.orElse(null);
     }
 
 
     @Override
     public User update(User object) {
         User merge;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try (Session session = HibernateUtil.openSession()) {
             Transaction transaction = session.beginTransaction();
             merge = (User) session.merge(object);
             transaction.commit();
@@ -45,7 +53,7 @@ public class UserRepositoryImpl implements UserRepository {
     public void delete(Integer id) {
         User user = new User();
         user.setId(id);
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try (Session session = HibernateUtil.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.remove(user);
             transaction.commit();
@@ -56,7 +64,7 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public List<User> getAll() {
         List<User> users;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try (Session session = HibernateUtil.openSession()) {
             Query<User> from_user = session.createQuery("From User", User.class);
             users = from_user.list();
         }

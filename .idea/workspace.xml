@@ -5,8 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a1eca71-ec10-4b1d-815f-43fced5735ba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/annakat/restapp/service/EventServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/annakat/restapp/service/FileServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/net/annakat/restapp/service/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/controller/FileControllerV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/controller/FileControllerV1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/controller/UserControllerV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/controller/UserControllerV1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/model/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/model/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/model/UFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/model/UFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/impl/EventRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/impl/HibernateEventRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/impl/FileRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/impl/HibernateFileRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/repository/impl/HibernateUserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/service/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/service/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/annakat/restapp/util/HibernateUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,35 +68,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
 }</component>
-  <component name="RunManager" selected="Maven.REST_API_application [tomcat7:run]">
-    <configuration name="HibernateUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="net.annakat.restapp.util.HibernateUtil" />
-      <module name="REST_API_application" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="net.annakat.restapp.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserRepositoryImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="net.annakat.restapp.repository.impl.UserRepositoryImpl" />
-      <module name="REST_API_application" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="net.annakat.restapp.repository.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="net.annakat.restapp.service.UserService" />
+  <component name="RunManager" selected="JUnit.EventServiceTest.createEvents">
+    <configuration name="EventServiceTest.createEvents" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="REST_API_application" />
       <extension name="coverage">
         <pattern>
@@ -89,67 +77,85 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="net.annakat.restapp.service" />
+      <option name="MAIN_CLASS_NAME" value="net.annakat.restapp.service.EventServiceTest" />
+      <option name="METHOD_NAME" value="createEvents" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="REST_API_application [tomcat6:run]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="tomcat6:run" />
-              </list>
-            </option>
-            <option name="pomFileName" value="pom.xml" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
+    <configuration name="EventServiceTest.getEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="REST_API_application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.annakat.restapp.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="net.annakat.restapp.service" />
+      <option name="MAIN_CLASS_NAME" value="net.annakat.restapp.service.EventServiceTest" />
+      <option name="METHOD_NAME" value="getEvent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="REST_API_application [tomcat7:run]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="tomcat7:run" />
-              </list>
-            </option>
-            <option name="pomFileName" value="pom.xml" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
+    <configuration name="FileServiceTest.updateFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="REST_API_application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.annakat.restapp.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="net.annakat.restapp.service" />
+      <option name="MAIN_CLASS_NAME" value="net.annakat.restapp.service.FileServiceTest" />
+      <option name="METHOD_NAME" value="updateFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.createUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="REST_API_application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.annakat.restapp.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="net.annakat.restapp.service" />
+      <option name="MAIN_CLASS_NAME" value="net.annakat.restapp.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="createUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.deleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="REST_API_application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.annakat.restapp.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="net.annakat.restapp.service" />
+      <option name="MAIN_CLASS_NAME" value="net.annakat.restapp.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="deleteUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Maven.REST_API_application [tomcat7:run]" />
-        <item itemvalue="Application.UserRepositoryImpl" />
-        <item itemvalue="Application.UserService" />
-        <item itemvalue="Application.HibernateUtil" />
-        <item itemvalue="Maven.REST_API_application [tomcat6:run]" />
+        <item itemvalue="JUnit.EventServiceTest.createEvents" />
+        <item itemvalue="JUnit.EventServiceTest.getEvent" />
+        <item itemvalue="JUnit.FileServiceTest.updateFile" />
+        <item itemvalue="JUnit.UserServiceTest.createUser" />
+        <item itemvalue="JUnit.UserServiceTest.deleteUser" />
       </list>
     </recent_temporary>
   </component>
@@ -179,6 +185,19 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.hibernate.AnnotationException" package="org.hibernate" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/net/annakat/restapp/service/FileService.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.google.gson.Gson" memberName="reflectionFilters" />

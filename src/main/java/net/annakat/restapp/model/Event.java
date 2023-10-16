@@ -1,6 +1,6 @@
 package net.annakat.restapp.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,16 +17,17 @@ import java.time.LocalDateTime;
 public class Event {
     @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    private Integer id;
     @Column(name = "name")
-    String name;
+    private String name;
     @Column(name = "created")
     private LocalDateTime created;
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JoinColumn(name = "user_id")
     private User user;
     @ManyToOne
     @JoinColumn(name = "file_id")
     private UFile uFile;
 
 }
+

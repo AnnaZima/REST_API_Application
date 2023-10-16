@@ -1,10 +1,12 @@
 package net.annakat.restapp.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -20,4 +22,6 @@ public class UFile {
     private String name;
     @Column(name = "file_path")
     private String filePath;
+    @OneToMany(mappedBy = "uFile", fetch = FetchType.LAZY)
+    private List<Event> events;
 }

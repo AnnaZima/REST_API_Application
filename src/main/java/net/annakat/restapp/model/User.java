@@ -20,6 +20,6 @@ public class User {
     private Integer id;
     @Column(name = "name")
     private String name;
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Event> events;
 }
